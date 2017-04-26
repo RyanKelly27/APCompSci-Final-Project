@@ -1,6 +1,9 @@
 #include <Adafruit_NeoPixel.h>
 #define PIN 6
 #define NUMPIXELS 60
+
+//HOPEFULLY SOMEONE CAN SEE THIS
+
 // Parameter 1 = number of pixels in strip
 // Parameter 2 = pin number (most are valid)
 // Parameter 3 = pixel type flags, add together as needed:
