@@ -1,0 +1,16 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Main_LED{
+
+	public Main_LED()
+	{
+		prepareGUI();
+	}
+	
+	public void prepareGUI()
+	{
+		
+	}
+}
