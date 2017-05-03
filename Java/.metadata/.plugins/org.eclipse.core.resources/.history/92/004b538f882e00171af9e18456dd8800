@@ -1,0 +1,76 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+
+public class JFrame_Testing {
+
+	private JFrame mainFrame;
+	private JLabel headerLabel;
+	private JLabel statusLabel;
+	
+	public int height = 1000;
+	public int width = 1000;
+	
+	public JFrame_Testing()
+	{
+		prepareGUI();
+	}
+	
+	private void prepareGUI()
+	{
+		mainFrame = new JFrame("JFrame_Testing");
+		mainFrame.setSize(width, height);
+		mainFrame.setLayout(new GridLayout(3, 2));
+		
+		headerLabel = new JLabel("HI",JLabel.CENTER );
+	    statusLabel = new JLabel("HOLA",JLabel.CENTER);        
+	    statusLabel.setSize(350,100);
+		
+	    JButton eazy = new JButton("EAZY");
+	    eazy.setSize(100, 100);
+	    
+	    mainFrame.addWindowListener(new WindowAdapter() 
+	    {
+	    	public void windowClosing(WindowEvent windowEvent)
+	        {
+	    		System.exit(0);
+	        }        
+	    }); 
+	    
+	    eazy.setActionCommand("EAZY");
+	    eazy.addActionListener(new ButtonClickListener()); 
+	    
+	    mainFrame.add(headerLabel);
+	    mainFrame.add(statusLabel);
+	    mainFrame.add(eazy);
+		mainFrame.setVisible(true);
+		
+	}
+	
+	private class ButtonClickListener implements ActionListener{
+	      public void actionPerformed(ActionEvent e) {
+	         String command = e.getActionCommand();  
+	         
+	         if(command.equals( "EAZY" ))  
+	         {
+	            statusLabel.setText("That was EAZY");
+	            
+	            height -= 50;
+	            width -= 50;
+	            
+	            mainFrame.dispatchEvent(new WindowEvent(mainFrame, WindowEvent.WINDOW_CLOSING));
+	            
+	            //mainFrame.setVisible(false);
+	            prepareGUI();
+	         }
+	      }		
+	   }
+	
+	
+	public static void main(String[] args)
+	{
+		JFrame_Testing test = new JFrame_Testing();
+	}
+	
+}

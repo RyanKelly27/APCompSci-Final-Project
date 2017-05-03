@@ -1,0 +1,53 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+//
+//* This is the public class, where program execution begins
+//* ************************************************
+public class example3
+{
+
+public static void main(String[] args)
+{
+JFrame Example3 = new EgWindow3(); //Create a window
+Example3.show(); //Display it
+}
+}
+//
+//* This is the definition of the window, which extends JFrame
+//* **************************************************
+class EgWindow3 extends JFrame
+{
+//
+//* The constructor for EgWindow
+//* ***************************
+public void EgWindow()
+{
+setTitle("Example 4");
+setSize(150,100);
+Container Contents=getContentPane();
+JPanel Panel = new PicturePanel();
+Contents.add(Panel);
+addWindowListener(new WindowAdapter() {
+public void windowClosing(WindowEvent e)
+{
+System.exit(0);
+}
+});
+}
+}
+//*
+//* This class extends JPanel and includes some drawing
+//* objects in the paintComponent method
+// ***********************************************
+class PicturePanel extends JPanel
+{
+public void paintComponent(Graphics Gr)
+{
+super.paintComponent(Gr);
+Gr.setColor(Color.yellow);
+Gr.fillOval(55,10,30,30);
+Gr.setFont(new Font("Serif",Font.ITALIC,20));
+Gr.drawString("Sunshine City",12,55);
+}
+}

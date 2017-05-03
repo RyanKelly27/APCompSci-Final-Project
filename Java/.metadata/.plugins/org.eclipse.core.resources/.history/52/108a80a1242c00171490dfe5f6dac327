@@ -1,0 +1,28 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class JFrame_Testing {
+
+	private JFrame mainFrame;
+	
+	public JFrame_Testing()
+	{
+		prepareGUI();
+	}
+	
+	private void prepareGUI()
+	{
+		mainFrame = new JFrame("JFrame_Testing");
+		mainFrame.setSize(1240, 720);
+		mainFrame.setLayout(new GridLayout(3, 1));
+		
+		mainFrame.setVisible(true);
+	}
+	
+	public static void main(String[] args)
+	{
+		JFrame_Testing test = new JFrame_Testing();
+	}
+	
+}
