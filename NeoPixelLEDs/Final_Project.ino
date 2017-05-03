@@ -26,6 +26,7 @@ void loop() {
 //    randomColors();
 //    randomUsed = true;
   } 
+<<<<<<< HEAD
   //fullScrollStrip(ussrColors, 2, 6, true, 0, 19);
   //fullScrollStrip(ussrColors, 2, 6, true, 20, 39);
   //fullScrollStrip(ussrColors, 2, 6, true, 40, 60);
@@ -34,6 +35,14 @@ void loop() {
   spectrum(50);
   strip.show();
   delay(100);
+=======
+//  wave(ussrColors, 2, 6, true, 0, 19, 10);
+//  wave(ussrColors, 2, 6, true, 20, 39, 100);
+//  wave(ussrColors, 2, 6, true, 40, 60, 10);
+//  wave(rainbowColors, 7, 6, true, 60, 0, 100);
+  spectrum(1);
+  strip.show();
+>>>>>>> f2ac07e24df5208be477ea589f83e040753c8407
 }
 
 void setEntireStripColor(uint32_t color)
@@ -82,7 +91,11 @@ void randomColors()
   delay(100);
 }
 
+<<<<<<< HEAD
 void fullScrollStrip(uint32_t colors[], int arrayLength, int groupLength, boolean forward, int start, int goTo)
+=======
+void wave(uint32_t colors[], int arrayLength, int groupLength, boolean forward, int start, int goTo, int speedOfWave)
+>>>>>>> f2ac07e24df5208be477ea589f83e040753c8407
 {
   if(start<0)
     start=0;
@@ -134,6 +147,7 @@ void fullScrollStrip(uint32_t colors[], int arrayLength, int groupLength, boolea
     else
       strip.setPixelColor(goTo-1, strip.getPixelColor(goTo-2));
   }
+<<<<<<< HEAD
 }
 void sineWave(int speedOfCycles)
 {
@@ -165,6 +179,9 @@ void sineWave(int speedOfCycles)
         }
     }
 }
+=======
+  delay(speedOfWave);
+>>>>>>> f2ac07e24df5208be477ea589f83e040753c8407
 }
 void spectrum(int speedOfCycle)
 {
