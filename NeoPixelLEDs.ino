@@ -12,9 +12,13 @@ uint32_t funColors[8] = {0xFF0000, 0xCc44CC, 0x2f4286, 0x336699, 0x996633, 0x66b
 short delayTick = 0;
 short delayLength = 0;
 short scrollStates = 0;
-int testChanges = 10;
+int testChanges = 0;
 int spectrumCounter = 0;
 int delayBlink = 200;
+int r = 0;
+int g = 0;
+int b = 0;
+int n = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -25,7 +29,13 @@ void setup() {
 void loop() {
   strip.setBrightness(255);
   if(testChanges == 0)
-    setEntireStripColor(0xB118C2);
+  {
+    r = Serial.read();
+    g = Serial.read();
+    b = Serial.read();
+    n = Serial.read();
+     strip.setPixelColor(n, r, g, b);
+  }
   else if(testChanges == 1) 
     setPartialStrip(42,18,0x0000FF);
   else if(testChanges == 2)
